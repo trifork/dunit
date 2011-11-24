@@ -13,12 +13,12 @@ class TestRunner {
 
   TestResult _runTestCase(TestCase test, TestResult result) {
     TestResult testCaseResult = new TestResult();
-    StopWatch watch = new StopWatch();
+    Stopwatch watch = new Stopwatch();
 
     time(()=>test.setUp(), watch);
 
     test.tests().forEach((name,t) {
-        StopWatch testWatch = new StopWatch();
+        Stopwatch testWatch = new Stopwatch();
         try {
           time(t, [watch, testWatch]);
           testCaseResult.pass(t, name, testWatch.elapsedInUs());
@@ -41,10 +41,10 @@ class TestRunner {
 
   TestResult _runTestSuite(TestSuite suite, TestResult result) {
     TestResult testSuiteResult = new TestResult();
-    StopWatch watch = new StopWatch();
+    Stopwatch watch = new Stopwatch();
 
     suite.testCases.forEach((tc) {
-        StopWatch testWatch = new StopWatch();//TODO SUM instead of time
+        Stopwatch testWatch = new Stopwatch();//TODO SUM instead of time
         time(()=>_runTestCase(tc,testSuiteResult),
              [watch, testWatch]);
       });

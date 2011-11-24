@@ -1,7 +1,7 @@
 #import("../dunit_base.dart");
 #import("../dunit_dsl.dart");
 #import("../dunit_reporters.dart");
-#import("../../pprint/pprint.dart");
+#import("../../dlib/pprint.dart");
 #source("tests/FirstTestCase.dart");
 #source("tests/SecondTestCase.dart");
 #source("tests/ThirdTestCase.dart");

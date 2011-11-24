@@ -15,7 +15,7 @@ class ConsoleReporter extends TestReporter {
     return color(str,'33');
   }
 
-  print_defects(defects [indent=""]) {
+  print_defects(defects, [indent=""]) {
     defects.forEach((num, r) {
         print("${indent}${r['name']}: ${r['outcome']} (${r['time']} us)");
         print("${indent}${r['message']}");
@@ -24,14 +24,14 @@ class ConsoleReporter extends TestReporter {
       });
 
   }
-  print_passed(passed [indent=""]) {
+  print_passed(passed, [indent=""]) {
     passed.forEach((num, r) {
         print("${indent}${r['name']}: ${r['outcome']} (${r['time']} us)");
       });
 
   }
 
-  void report(TestResult res [indent=""]) {
+  void report(TestResult res, [indent=""]) {
     res.results.forEach((k,tr) {
         if (k is TestSuite) {
           print("${indent}TestSuite:  ${k.name} (${tr['outcome']})");

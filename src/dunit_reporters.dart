@@ -1,8 +1,8 @@
 #library("contrib.dunit.reporters");
 
 #import("dunit_base.dart");
-#import("../utils/utils.dart");
-#import("../pprint/pprint.dart");
+#import("../dlib/utils.dart");
+#import("../dlib/pprint.dart");
 
 
-#source("src/reporters/ConsoleReporter.dart");
+#source("reporters/ConsoleReporter.dart");
